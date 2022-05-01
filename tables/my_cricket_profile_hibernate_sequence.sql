@@ -18,27 +18,14 @@ USE `my_cricket_profile`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `scorecard`
+-- Table structure for table `hibernate_sequence`
 --
 
-DROP TABLE IF EXISTS `scorecard`;
+DROP TABLE IF EXISTS `hibernate_sequence`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `scorecard` (
-  `id` int NOT NULL,
-  `innings1_fk` int DEFAULT NULL,
-  `innings2_fk` int DEFAULT NULL,
-  `innings3_fk` int DEFAULT NULL,
-  `innings4_fk` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `innings1_idx` (`innings1_fk`),
-  KEY `innings2_idx` (`innings2_fk`),
-  KEY `innings3_idx` (`innings3_fk`),
-  KEY `innings4_idx` (`innings4_fk`),
-  CONSTRAINT `innings1` FOREIGN KEY (`innings1_fk`) REFERENCES `innings_score` (`id`),
-  CONSTRAINT `innings2` FOREIGN KEY (`innings2_fk`) REFERENCES `innings_score` (`id`),
-  CONSTRAINT `innings3` FOREIGN KEY (`innings3_fk`) REFERENCES `innings_score` (`id`),
-  CONSTRAINT `innings4` FOREIGN KEY (`innings4_fk`) REFERENCES `innings_score` (`id`)
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +38,4 @@ CREATE TABLE `scorecard` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-01 23:28:30
+-- Dump completed on 2022-05-01 23:28:28

@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `my_cricket_profile` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `my_cricket_profile`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: my_cricket_profile
@@ -28,6 +30,10 @@ CREATE TABLE `user` (
   `user_lname` varchar(45) DEFAULT NULL,
   `email_id` varchar(45) DEFAULT NULL,
   `login_id` varchar(45) DEFAULT NULL,
+  `batting_style` varchar(255) DEFAULT NULL,
+  `bowling_style` varchar(255) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login_id_UNIQUE` (`login_id`),
   UNIQUE KEY `email_id_UNIQUE` (`email_id`)
@@ -43,4 +49,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-29 21:39:07
+-- Dump completed on 2022-05-01 23:28:29

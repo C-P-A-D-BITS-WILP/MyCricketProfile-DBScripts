@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `my_cricket_profile` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `my_cricket_profile`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: my_cricket_profile
@@ -23,9 +25,10 @@ DROP TABLE IF EXISTS `team_members`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `team_members` (
+  `team_fk` int NOT NULL,
+  `player_fk` int NOT NULL,
   `id` int NOT NULL,
-  `team_fk` int DEFAULT NULL,
-  `player_fk` int DEFAULT NULL,
+  `player_status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `player_fk_idx` (`player_fk`),
   KEY `team_fk_idx` (`team_fk`),
@@ -43,4 +46,4 @@ CREATE TABLE `team_members` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-29 21:39:07
+-- Dump completed on 2022-05-01 23:28:26
